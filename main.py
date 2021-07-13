@@ -1,16 +1,22 @@
-# This is a sample Python script.
+'''Write a python program to check whether the number is Armstrong number or not using function:
+[Hint: 153 - 1*1*1 + 5*5*5 + 3*3*3]'''
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def armstrong():
+    num = int(input("Enter the number:"))
+    length = len(str(num))
+    copy_num = num
+    sum = 0
 
+    while num > 0:
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+        digit = num%10
+        sum += digit**length
+        num = num//10
 
+    if sum == copy_num:
+        print("Armstrong number")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    else:
+        print("Not an Armstrong number")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+armstrong()
